@@ -1,0 +1,235 @@
+1. Simple Function (No Arguments, No Return)
+def say_hello():
+    print("Hello!")
+
+say_hello()
+
+
+2. Function with Arguments (No Return)
+def greet_user(name):
+    print(f"Welcome, {name}!")
+
+greet_user("Alice")
+
+
+3. Function with Return Value
+def square(x):
+    return x * x
+
+print(square(5))  # Output: 25
+
+
+4. Function with Default Arguments
+def greet(name="Guest"):
+    print(f"Hello, {name}!")
+
+greet()           # Output: Hello, Guest!
+greet("Bob")      # Output: Hello, Bob!
+
+
+5. Function with Multiple Return Values
+def math_operations(a, b):
+    return a + b, a - b, a * b, a / b
+
+add, sub, mul, div = math_operations(10, 2)
+print(add, sub, mul, div)
+
+
+
+
+
+6. Function with *args (Variable Number of Positional Arguments)
+def total_sum(*numbers):
+    print(sum(numbers))
+
+total_sum(1, 2, 3)
+total_sum(10, 20)
+
+
+7. Function with **kwargs (Variable Number of Keyword Arguments)
+def show_info(**kwargs):
+    for key, value in kwargs.items():
+        print(f"{key}: {value}")
+
+show_info(name="Alice", age=25, city="Paris")
+
+
+8. Function Calling Another Function
+def square(x):
+    return x * x
+
+def display_result(y):
+    result = square(y)
+    print("Result:", result)
+
+display_result(6)
+
+
+9. Recursive Function
+def factorial(n):
+    if n == 0:
+        return 1
+    return n * factorial(n - 1)
+
+print(factorial(5))  # Output: 120
+
+
+10. Lambda Function (Anonymous Function)
+add = lambda x, y: x + y
+print(add(5, 3))  # Output: 8
+
+
+11. Function with Type Hints
+def greet(name: str, age: int) -> str:
+    return f"{name} is {age} years old."
+
+print(greet("Tom", 28))
+
+
+12. Function Inside a Function (Nested Functions)
+def outer():
+    print("Outer function")
+
+    def inner():
+        print("Inner function")
+
+    inner()
+
+outer()
+
+
+
+13. Function with a List as Argument
+def print_names(names):
+    for name in names:
+        print(f"Hello, {name}")
+
+print_names(["Alice", "Bob", "Charlie"])
+
+
+14. Function Returning a List
+def even_numbers(n):
+    return [i for i in range(n) if i % 2 == 0]
+
+print(even_numbers(10))
+
+
+15. Function Returning Another Function (Closure)
+def multiplier(factor):
+    def multiply(n):
+        return n * factor
+    return multiply
+
+double = multiplier(2)
+print(double(5))  # Output: 10
+
+
+16. Using Functions as Arguments
+def apply_function(f, value):
+    return f(value)
+
+def square(n):
+    return n * n
+
+print(apply_function(square, 6))  # Output: 36
+
+
+17. Generator Function (Using yield)
+def countdown(n):
+    while n > 0:
+        yield n
+        n -= 1
+
+for i in countdown(5):
+    print(i)
+
+
+18. Using Decorators
+def shout(func):
+    def wrapper():
+        print("Calling function...")
+        func()
+        print("Function call complete.")
+    return wrapper
+
+@shout
+def hello():
+    print("Hello, world!")
+
+hello()
+
+
+19. Function to Check Prime Number
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+print(is_prime(7))  # True
+
+
+20. Function for a Simple Calculator
+def calculator(a, b, operation):
+    if operation == 'add':
+        return a + b
+    elif operation == 'sub':
+        return a - b
+    elif operation == 'mul':
+        return a * b
+    elif operation == 'div':
+        return a / b
+    else:
+        return "Invalid operation"
+
+print(calculator(10, 5, 'add'))
+
+
+21. Function Handling File Operations
+def read_file(filename):
+    try:
+        with open(filename, 'r') as file:
+            print(file.read())
+    except FileNotFoundError:
+        print("File not found!")
+
+read_file("example.txt")
+
+
+22. Function for Sorting Dictionary by Values
+def sort_dict_by_value(d):
+    return dict(sorted(d.items(), key=lambda item: item[1]))
+
+data = {'apple': 5, 'banana': 2, 'cherry': 9}
+print(sort_dict_by_value(data))
+
+
+23. Function to Flatten Nested List
+def flatten_list(nested):
+    flat = []
+    for i in nested:
+        if isinstance(i, list):
+            flat.extend(flatten_list(i))
+        else:
+            flat.append(i)
+    return flat
+
+print(flatten_list([1, [2, 3], [4, [5, 6]]]))
+
+
+24. Function to Check Palindrome
+def is_palindrome(word):
+    return word == word[::-1]
+
+print(is_palindrome("radar"))  # True
+
+
+25. Function to Count Vowels in a String
+def count_vowels(text):
+    return sum(1 for char in text if char.lower() in 'aeiou')
+
+print(count_vowels("Hello World"))
+
+
