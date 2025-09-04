@@ -1,7 +1,5 @@
 def sum(x,y):
     return x+y
-
-
 print(sum(10,20))
 
 add=lambda x,y : x+y
