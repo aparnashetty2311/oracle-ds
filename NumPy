@@ -1,0 +1,245 @@
+NumPy
+==========
+
+1. Basics of Array
+2. Slicing
+3. Functions
+4. copy view
+5. Reshaping of Array
+6. iteration
+7. Soring
+8. Seraching
+9. Filtaring
+
+
+Lipi inampudi
+Venkata Ranga  Numpy and Pandas
+
+    
+
+import numpy as np
+# pip install numpy
+
+#list=[1,2,3,4,'3434',True,[2,3,4,54]]
+#print(list)
+
+np1=np.array([0,1,2,3,4,5,6,7,8,9])
+print(np1)
+#np1.shape
+print(" Shape ->",np1.shape)
+
+A = np.array( [ [10,20,30], [40,50,60] ] )
+print(A)
+print(A.shape)
+
+B = np.array( [ [10,20,30], [40,50,60], [40,50,60] ] )
+print(B)
+print(B.shape)
+
+
+# Range 
+
+np2=np.arange(10)
+print(np2)
+
+np3=np.arange(0,20,3)
+print(np3)
+
+
+np4=np.zeros(10)
+print(np4)
+
+
+np5=np.zeros((5,10))
+print(" 2-d Array")
+print(np5)
+
+np6=np.full((10),6.7)
+print(np6)
+
+np7=np.full((3,10),100.7)
+print(np7)
+
+
+np8=np.ones((5,6))
+print(np8)
+print(np.dtype)
+
+np9=np.full((3,3,3,3),10)
+print(np9)
+print(np9.ndim)
+
+
+np10=np.random.random((5,3))
+print(np10)
+
+np11=np.random.normal(2,4,(3,4))
+print(np11)
+
+np12=np.random.randint(10,20,(3,4))
+print(np12)
+
+
+import numpy as np
+'''
+np5=np.array([10,11,12,13,14,15,16,17,18,19,20])
+print(np5)
+
+#[start:stop:step]
+
+#11,12,13,14
+
+print(np5[1:5])
+
+print(np5[5:10])
+
+print(np5[3:])
+
+print(np5[:5:])
+
+print(np5[-5:-1])
+
+print(np5[-5:])
+
+print(np5[::2])
+
+print(np5[::3])
+
+print(np5[::4])
+'''
+# Slicing 2-d array
+
+np6=np.array([[3,5,7,8,2,3],[2,7,3,2,3,6]])
+print(np6)
+
+print(np6[1,2])
+
+print(np6[0,4])
+
+#print(np6[0:1,1:5])
+
+
+'''
+B = np.array( [ [10,20,30,34], [40,50,60,34] ] )
+print(B)
+A = B.reshape(2,2,2)
+print(A)
+
+
+print(B.shape)
+print(B.ndim)
+print(B.size)
+print(B.dtype)
+print(B.itemsize)
+
+
+# Identity matrix
+
+np2=np.eye(3,dtype=int)
+print(np2)
+
+
+# Convert list to Array
+
+list=[10,20,30];
+
+np3=np.array(list)
+print(np3)
+'''
+
+
+
+View & Copy
+===========
+
+A Shollow Copy:- It  shares the same data buffer changes to the view affected the Original Array
+
+A Deep copy:-  It create a new array in memory. Changes to the copy dont't affect the original arry
+
+
+import numpy as np
+
+original=np.array([10,20,30,40])
+
+print("Priginal Array" , original)
+
+# View (Sallow copy ) shortcut
+
+view=original[1:3]   # 20,30
+
+
+# Copy is (Deep copy)  New file is create
+copy=original[1:3].copy()   # 20,30
+print(" View ", view)
+print(" copy ", copy)
+
+
+view[0]=999
+print("Priginal Array" , original)
+print("view ",view)
+
+copy[0]=888
+print("Priginal Array" , original)
+print(" copy ", copy)
+
+#print("view ",view)
+
+==============================================
+
+Sorting
+========
+
+import numpy as np
+
+np1=np.array([3,2,7,5,9,8])
+
+print(" Original Array", np1)
+
+#np1[0]=100;
+
+sort_np2=np.sort(np1)
+print(" Sorted Array", sort_np2)
+
+
+
+
+Soring 2-d Array
+===============
+
+
+User case
+=========
+Usint Structured Array solve the student details
+
+
+Stno   stname   s1      s2      s3    totMarks  Average  Grade
+
+101	   Ramana    100   100      100     300       100     A
+
+This Problem you need solve in NumPy
+
+Write this in the File
+
+and  Read the data from the file
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
